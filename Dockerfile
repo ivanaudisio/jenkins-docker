@@ -3,7 +3,7 @@
 # Jenkins Master OSS
 ############################################################
 
-FROM jenkins/jenkins:2.107.2
+FROM jenkins/jenkins:2.107.3
 
 USER root
 

@@ -46,14 +46,16 @@ Please keep in mind that this follows Jenkins file based structure of a folder w
 
 *Example*
 
-└───jobs
-│   │
-│   └───my-job-01
-│   |       config.xml
-│   │
-│   └───my-job-02
-│           config.xml
-└─── ...
+└─ jobs
+│ │
+│ └─ my-job-01
+│ │ └─ config.xml
+│ │
+│ └─ my-job-02
+│ │ └─ config.xml
+│ │
+│ └─ ...
+└─ ...
 
 Dropping two folders like the ones shown above under the `jobs` folder will create two jobs with the names `my-job-01` and `my-job-02` using the configuration files inside of each.
 
