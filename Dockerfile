@@ -32,7 +32,13 @@ COPY plugins.txt /tmp
 RUN /usr/local/bin/plugins.sh /tmp/plugins.txt
 
 # Adding groovy scripts to be executed
-COPY --chown=jenkins:jenkins groovy /usr/share/jenkins/ref/init.groovy.d
+COPY groovy /usr/share/jenkins/ref/init.groovy.d
+RUN sudo chown -R jenkins:jenkins /usr/share/jenkins/ref/init.groovy.d
+# For newer versions we can replace the 2 lines above for:
+# COPY --chown=jenkins:jenkins groovy /usr/share/jenkins/ref/init.groovy.d
 
 # Adding Jenkins jobs
-COPY --chown=jenkins:jenkins jobs /var/jenkins_home/jobs
+COPY jobs /var/jenkins_home/jobs
+RUN sudo chown -R jenkins:jenkins /var/jenkins_home/jobs
+# For newer versions we can replace the 2 lines above for:
+# COPY --chown=jenkins:jenkins jobs /var/jenkins_home/jobs
